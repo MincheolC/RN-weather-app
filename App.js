@@ -1,12 +1,24 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
+export default class App extends Component {
+  state = {
+    isLoading: true
+  };
+
+  render() {
+    const { isLoading } = this.state;
+
+    return (
+      <View style={styles.container}>
+        {isLoading ? (
+          <Text>Fetching The Weather</Text>
+        ) : (
+          <Text>Weather App</Text>
+        )}
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
