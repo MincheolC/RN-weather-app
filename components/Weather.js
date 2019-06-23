@@ -8,10 +8,10 @@ export default class Weather extends Component {
       <View style={styles.container}>
         <View style={styles.headerContainer}>
           <MaterialCommunityIcons size={48} name='weather-sunny' color={'#ffff'}/>
-          <Text style={styles.tempText}>Temperature˚</Text>
+          <Text style={styles.tempText}>{this.props.temperature}˚</Text>
         </View>
         <View style={styles.bodyContainer}>
-          <Text style={styles.title}>So Sunny</Text>
+          <Text style={styles.title}>{this.props.weather}</Text>
           <Text style={styles.subTitle}>It hurts my eyes!</Text>
         </View>
       </View>
@@ -33,8 +33,8 @@ const styles = StyleSheet.create({
     flex: 2,
     alignItems: 'flex-start',
     justifyContent: 'flex-end',
-    paddingHorizontal: 25,
-    marginBottom: 40
+    paddingHorizontal: 30,
+    marginBottom: 60
   },
   title: {
     fontSize: 48,
