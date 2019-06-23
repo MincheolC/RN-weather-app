@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import Weather from './components/Weather';
 
 export default class App extends Component {
   state = {
-    isLoading: true
+    isLoading: false
   };
 
   render() {
@@ -14,7 +15,7 @@ export default class App extends Component {
         {isLoading ? (
           <Text>Fetching The Weather</Text>
         ) : (
-          <Text>Weather App</Text>
+          <Weather />
         )}
       </View>
     );
@@ -24,8 +25,5 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
